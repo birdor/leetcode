@@ -1,8 +1,8 @@
 /**
 	leetcode - Recover Binary Search Tree
-	Time: 
-	Space: 
-	Completed:
+	Time: O(n)
+	Space: O(n)
+	Completed: 2014.10.11
 */
 /**
  * Definition for binary tree
