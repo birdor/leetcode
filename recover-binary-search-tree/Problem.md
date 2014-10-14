@@ -1,6 +1,6 @@
 ## leetcode - Recover Binary Search Tree
 - Time: 2014.10.01
-- Tags: 
+- Tags: data structure, tree, simulation
 
 ### Problem Description [link][1]
 Two elements of a binary search tree (BST) are swapped by mistake.
