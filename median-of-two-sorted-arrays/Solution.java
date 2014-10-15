@@ -1,43 +1,28 @@
 /**
 	leetcode - Median Of Two Sorted Arrays
 	Time: O(log(n))
-	Space: O(n)
+	Space: O(1)
 	Completed: 2014.10.12
 */
 public class Solution {
     public double findMedianSortedArrays(int A[], int B[]) {
-    	// System.out.print("gogogo");
-		// int i = (A.length + B.length) / 2;
-		// double r3 = getByIndex(0, A, 0, A.length, B, 0, B.length);
-		// System.out.println("r3 = " + r3);
-    	// if (((A.length + B.length) & 1) > 0){
-    	// 	return (getByIndex(i, A, 0, A.length, B, 0, B.length) + getByIndex(i + 1, A, 0, A.length, B, 0, B.length)) / 2;
-    	// }else{
-    	// 	return getByIndex(i, A, 0, A.length, B, 0, B.length);
-    	// }
-    	return 0;
+        int N = A.length + B.length;
+        double mid = getKth(N / 2 + 1, A, 0, A.length, B, 0, B.length);
+        return (N % 2 == 1) ? mid : (mid + getKth(N / 2, A, 0, A.length, B, 0, B.length)) / 2;
     }
 
-    public double getByIndex(int k, int A[], int ai, int alen, int B[], int bi, int blen){
-    	System.out.println("k = " + k);
-    	for (int i = 0; i < alen; i++) System.out.print(A[ai + i] + " ");
-    	System.out.print("\n");
-    	for (int i = 0; i < blen; i++) System.out.print(B[bi + i] + " ");
-    	System.out.print("\n");
-
-    	if (k == 0) return (double) Math.min(A[ai], B[bi]);
-		if (alen > blen) return getByIndex(k, B, bi, blen, A, ai, alen);
-		if (alen == 0) return (double) B[bi + k];
-		int aj = ai + Math.min(k/2, alen - 1);
-		int bj = ai + bi + k - aj;
-		if (A[aj] < B[bj]){
-			return getByIndex(k - aj + ai, A, aj, alen - aj + ai + 1, B, bi, bj - bi);
-		}else{
-			return getByIndex(k - bj + ai, B, bj, blen - bj + bi + 1, A, ai, aj - ai);
-		}
-    }
-
-    public double getKth(int k, int A[], int ai, int alen, int B[] int bi, int blen){
-    	
+    public double getKth(int k, int A[], int ai, int alen, int B[], int bi, int blen){
+        if (alen > blen)
+            return getKth(k, B, bi, blen, A, ai, alen);
+        if (alen == 0)
+            return B[bi - 1 + k];
+        if (k == 1)
+            return Math.min(A[ai], B[bi]);
+        int aseg = Math.min(k/2, alen), bseg = k - aseg;
+        if (A[ai + aseg - 1] < B[bi + bseg - 1]){
+            return getKth(k - aseg, A, ai + aseg, alen - aseg, B, bi, bseg);
+        }else{
+            return getKth(k - bseg, A, ai, aseg, B, bi + bseg, blen - bseg);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class test{
 			B[i] = in.nextInt();
 
 		Solution so = new Solution();
-		double ans = so.getByIndex(in.nextInt(), A, 0, A.length, B, 0, B.length);
+		double ans = so.getKth(in.nextInt(), A, 0, A.length, B, 0, B.length);
 		System.out.println(ans);
 		// System.out.println(so.findMedianSortedArrays(A, B));
 	}
