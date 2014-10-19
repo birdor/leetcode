@@ -1,8 +1,8 @@
 /**
 	leetcode - 3sum
-	Time: 
-	Space: 
-	Completed:
+	Time: O(n^2)
+	Space: O(n)
+	Completed: 2014.10.18
 */
 import java.util.Arrays;
 import java.util.ArrayList;
