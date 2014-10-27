@@ -15,7 +15,7 @@ assert len(sys.argv) <= 2
 
 sProblem = '## leetcode - %s\n- Time: %s\n- Tags: \n\n### Problem Description [link][1]\n\n### Solution\n```java\n```\n\n[1]: %s "%s"\n'
 sSolution = "/**\n\tleetcode - %s\n\tTime: \n\tSpace: \n\tCompleted:\n*/"
-sTest = "import java.util.Scanner;\n\npublic class test{\n\tpublic static void main(String[] args){\n\t}\n}"
+sTest = "import java.util.Scanner;\n\npublic class test{\n\tpublic static void main(String[] args){\n\t\tScanner in = new Scanner(System.in);\n\t}\n}"
 
 
 def preprocess(argin):
