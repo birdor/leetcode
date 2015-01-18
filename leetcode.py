@@ -9,7 +9,8 @@ import webbrowser
 import string 
 import datetime
 
-subl = '/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl '
+# subl = '/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl '
+subl = 'subl '
 
 assert len(sys.argv) <= 2
 
